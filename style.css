@@ -22,6 +22,11 @@ h3 {
   font-family: "Dosis", serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 input {
   font-family: inherit;
   font-size: 1.1rem;
@@ -73,13 +78,53 @@ input[type="submit"]:hover {
 
 /* ***NAVBAR*** */
 .navbar {
-  padding: 1.8rem 0;
+  padding: 1.2rem 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.navbar__logo {
+  padding-right: 1rem;
+  text-align: center;
+}
+.navbar__links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+}
+.navbar__links li {
+  margin-right: 1rem;
+  text-align: center;
+}
+.navbar__links li:last-child {
+  margin-right: 0;
+}
+.navbar__links a {
+  padding: 1rem;
+  font-family: "Dosis", serif;
+  transition: color 0.1s;
+}
+.navbar__links li:first-child a {
+  padding-left: 0;
+}
+.navbar__links li:last-child a {
+  padding-right: 0;
+}
+.navbar__links a:hover {
+  color: #5194a6;
+}
+.navbar__links__current {
+  color: #5194a6;
 }
 
 /* ***HERO*** */
 .hero__wrapper {
   position: relative;
-  padding-bottom: 6rem;
+  padding-bottom: 0rem;
 }
 .hero {
   flex: 1;
@@ -97,6 +142,7 @@ input[type="submit"]:hover {
   color: white;
   font-size: 4rem;
   text-shadow: 4px 4px 11px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 .hero__form {
   width: 960px;
@@ -112,6 +158,63 @@ input[type="submit"]:hover {
 }
 .hero__form-wrapper {
   width: 100%;
-  position: absolute;
+  position: relative;
   bottom: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .navbar__links li:first-child a {
+    padding-left: 1rem;
+  }
+  .navbar__links li:last-child a {
+    padding-right: 1rem;
+  }
+  .navbar__logo {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .hero__form {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .navbar__links li {
+    font-size: 1.2rem;
+  }
+  .navbar__logo {
+    font-size: 2rem;
+    border-bottom: 3px dotted #5194a6;
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar__links {
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar__links li {
+    margin-right: 0;
+  }
+  .navbar__links a {
+    font-size: 1.4rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    width: 100%;
+    display: block;
+  }
 }
