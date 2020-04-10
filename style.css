@@ -14,6 +14,7 @@ html {
 body {
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.6;
+  background-color: #5194a6;
 }
 
 h1,
@@ -70,20 +71,28 @@ input[type="submit"]:hover {
 .container {
   max-width: 1024px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .accent-text {
   color: #5194a6;
 }
 
+.flex-center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 /* ***NAVBAR*** */
 .navbar {
-  padding: 1.2rem 0;
+  padding: 0 0 1.2rem 0;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 .navbar__logo {
   padding-right: 1rem;
@@ -125,6 +134,7 @@ input[type="submit"]:hover {
 .hero__wrapper {
   position: relative;
   padding-bottom: 0rem;
+  box-sizing: border-box;
 }
 .hero {
   flex: 1;
@@ -158,8 +168,15 @@ input[type="submit"]:hover {
 }
 .hero__form-wrapper {
   width: 100%;
-  position: relative;
-  bottom: 3rem;
+  position: absolute;
+  bottom: -3rem;
+}
+.container--hero {
+  box-sizing: content-box;
+  padding: 2.5rem 4rem;
+  padding-bottom: 6rem;
+  border-radius: 40px;
+  background-color: white;
 }
 
 @media (max-width: 1024px) {
